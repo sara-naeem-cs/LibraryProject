@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Best Library</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
+</head>
+<body>
+    <!--Create a button that shows the form-->
+    <div class="book-holder" id="book-holder">
+        <!-- -->
+        <div class="book">
+          <button class="delete"><span class="text">Delete</span></button>
+          <h4>Title of book</h4>
+          <p>Author of book</p>
+          <p>Pages num</p>
+          <button class="read"><span class="text">Read</span></button>
+        </div>   
+
+        <div class="book">
+          <button class="delete"><span class="text">Delete</span></button>
+          <h4>Title of book</h4>
+          <p>Author of book</p>
+          <p>Pages num</p>
+          <button class="read"><span class="text">Read</span></button>
+        </div>   
+
+        </div>      
+
+    </div>
+
+<br>
+
+    <div class="form-container" id="myForm">
+        <form class="form" action="index.html" method="get">      
+          <label for="book-title">Book Title:</label>
+          <input type="text" id="book-title" placeholder="A short history of ..." required>
+      
+          <label for="book-author">Book Author:</label>
+          <input type="text" id="book-author" placeholder="Margaret Thatcher" required>
+
+          <label for="age">Pages:</label>
+          <input type="number" name="pages" id="pages" required>
+
+
+          <button type="buton" id="submit" class="btn">Submit</button>
+          <button type="buton" id="close-btn" class="btn">Close</button>
+
+        </form>
+      </div>
+    <!--Once form is filled add it to the list of books-->
+    
+</body>
+</html>
