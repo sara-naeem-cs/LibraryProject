@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const newPages = document.getElementById("pages")
     const submitButton = document.getElementById("submit")
     const bookContainter = document.getElementById("book-holder");
+    const deleteButtons = document.querySelectorAll(".delete"); 
+    const openFormBtn = document.getElementById('addBookBtn');
+    const closeFormBtn = document.getElementById("close-btn");
+
 
 
 
@@ -36,34 +40,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showBooks(){
-        //document.querySelectorAll(".book").forEach(book => book.remove());
-        //myLibrary.forEach(() => {
-        let newContent = `<div class="book">
+        let newContent = `<div class="book" data-book="${myLibrary.length}">
+                        <button class="delete"><span class="text">&times;</span></button>
                         <h4>${newName.value}</h4>
                         <p>${newAuthor.value}</p>
                         <p>${newPages.value}</p>
+                        <button class="read"><span class="text">Read</span></button>
                         </div>`;
-        bookContainter.insertAdjacentHTML("afterend", newContent);
-
-       // });
+        bookContainter.insertAdjacentHTML("beforeend", newContent);
     }
 
     submitButton.addEventListener('click', (event) => {
-        //greetingOutput.innerText = `Hello ${name.value}`;
-        //When button is clicked we add a new object to the list
         event.preventDefault();
         console.log(newName.value);
         console.log(newAuthor.value);
         console.log(newPages.value);
         const book = new Book(newName.value, newAuthor.value, newPages.value, true);
-        addBookToLibrary(book)
         showBooks();
+        addBookToLibrary(book)
+    });
+  
+  deleteButtons.forEach(book=> {
+    book.addEventListener("click", function(e) {
+            const clickedBook = e.target.parentElement.parentElement;
+            var index = clickedBook.getAttribute('data-type');
+              
+            clickedBook.remove();
+            //Need to remove the specific book from the array:
+            console.log(myLibrary);
+            myLibrary.splice(parseInt(index), 1);
+            console.log(myLibrary);
+      });
+  }); 
 
-        //console.log(myLibrary);
-        //console.log(myLibrary[3])
+  
+openFormBtn.addEventListener('click', () => { 
+  const form = document.getElementById('myForm');
+  if (form.style.display === 'none') {
+    form.style.display = 'block';
+    openFormBtn.style.display = 'none';
+  } else {
+    form.style.display = 'none';
+    openFormBtn.style.display = 'block';
+  } 
+});
 
-    })
-
+  closeFormBtn.addEventListener('click', () =>{
+     const form = document.getElementById('myForm');
+    form.style.display = 'none';
+    openFormBtn.style.display = 'block';
+  })
+  
     //************************************************* */
 
 
@@ -71,6 +98,5 @@ document.addEventListener('DOMContentLoaded', () => {
     function main(){
 
     }
-    main();    
+    main();   
 })
-
