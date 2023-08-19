@@ -1,56 +1,39 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <title>The Best Library</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="script.js"></script>
-</head>
-<body>
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
     <h1>Book Tracker</h1>
     <div class="form-container" id="myForm">
       <div class="form-header">
         <div class="title">Fill in the data to add a book!</div>
         <button type="button" id="close-btn" class="btn">&times;</button>
       </div>
-          <form class="form" action="index.html" method="get">      
-            <label for="book-title">Book Title:
-            <input type="text" id="book-title" placeholder="A short history of ..." required></label>
-            <label for="book-author">Book Author:
-            <input type="text" id="book-author" placeholder="Margaret Thatcher" required></label>
-            <label for="age">Pages:
-            <input type="number" name="pages" id="pages" required></label>
-            <button type="button" id="submit" class="btn">Submit</button>
-          </form>
-     </div>
-  <br>
-     <button id="addBookBtn">+ Add a Book</button>
+      <form class="form" action="index.html" method="get">
+        <label for="book-title">Book Title:
+          <input type="text" id="book-title" placeholder="A short history of ..." required></label>
+        <label for="book-author">Book Author:
+          <input type="text" id="book-author" placeholder="Margaret Thatcher" required></label>
+        <label for="age">Pages:
+          <input type="number" name="pages" id="pages" required></label>
+        <label for="book-status">Read
+        <input type="checkbox" id="book-status" value="read" checked> </label>
+        <button type="button" id="submit" class="btn">Submit</button>
+      </form>
+    </div>
 
+    <div id="add-books-btn-div">
+    <button id="addBookBtn">+ Add a Book</button>
+    </div>
+    <br>
     <div class="book-holder" id="book-holder">
-        <!-- -->
-        <div class="book" data-book="0">
-          <button class="delete"><span class="text">&times;</span></button>
-          <h4>Title of book</h4>
-          <p>Author of book</p>
-          <p>Pages num</p>
-          <button class="read"><span class="text">Read</span></button>
-        </div>   
-        <div class="book" data-book="1">
-          <button class="delete"><span class="text">&times;</span></button>
-          <h4>Title of book</h4>
-          <p>Author of book</p>
-          <p>Pages num</p>
-          <button class="read"><span class="text">Read</span></button>
-        </div> 
-      <div class="book" data-book="2">
-          <button class="delete"><span class="text">&times;</span></button>
-          <h4>Title of book</h4>
-          <p>Author of book</p>
-          <p>Pages num</p>
-          <button class="read"><span class="text">Read</span></button>
-      </div>  
-      </div> <!--end of book holder div-->     
+    </div>
 
-    <!--</div>-->
-</body>
+  </body>
+
 </html>
